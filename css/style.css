@@ -1,0 +1,280 @@
+@import url('https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,300;1,100&family=Nanum+Gothic&family=Noto+Sans+KR&display=swap');
+ul,li,p,span{
+  font-family: 'Noto Sans KR', sans-serif;
+  font-weight: 400;
+  font-size: 14px;
+}
+
+code {
+  background: #7082f3;  color: #fff;  padding: 3px;
+}
+
+/* 
+/*
+Main Scrollbar
+*/
+::-webkit-scrollbar{
+    width: 0.8em;
+}
+ 
+/*
+Vertical Scrollbar (RIGHT SIDE)
+*/
+::-webkit-scrollbar-track:vertical {
+  background: -webkit-linear-gradient(180deg, #fff, #fff, #fff, #fff, rgba( 0, 0, 255, 0.5), rgba( 0, 0, 255, 0.5), rgba( 0, 0, 255, 0.5), #fff, #fff, #fff);
+  border-radius: 10px;
+}
+
+/*
+Horizontal Scrollbar (BOTTOM SIDE)
+*/
+::-webkit-scrollbar-track:horizontal {
+  background: -webkit-linear-gradient(90deg, #fff, #fff, #fff, #fff, rgba( 0, 0, 255, 0.5), rgba( 0, 0, 255, 0.5), rgba( 0, 0, 255, 0.5), #fff, #fff, #fff);
+  border-radius: 10px;
+} 
+
+/*
+Scrollbar Thumb
+*/
+::-webkit-scrollbar-thumb {
+  background: rgba( 112, 178, 243, 0.75);
+  border-radius: 2em;
+}
+
+/*
+Horiontal Scrollbar button (TOP-RIGHT aKa START)
+*/
+::-webkit-scrollbar-button:horizontal:single-button:start {
+  position: absolute;
+  content: '';
+  border-bottom: 20px solid transparent;
+  border-right: 42px solid #7082f3;
+  border-left: 20px solid transparent;
+  border-top: 20px solid transparent;
+}
+
+/*
+Vertical Scrollbar button (BOTTOM-LEFT aKa START)
+*/
+::-webkit-scrollbar-button:vertical:single-button:start {
+  position: absolute;
+  content: '';
+  border-right: 20px solid transparent;
+  border-bottom: 62px solid #7082f3;
+  border-left: 20px solid transparent;
+  border-top: 20px solid transparent;
+}
+
+/*
+Horiontal Scrollbar button (BOTTOM-RIGHT aKa END)
+*/
+::-webkit-scrollbar-button:horizontal:single-button:end {
+  position: absolute;
+  overflow: hidden;
+  content: '';
+  border-bottom: 20px solid transparent;
+  border-left: 42px solid #7082f3;
+  border-right: 20px solid transparent;
+  border-top: 20px solid transparent;
+}
+
+/*
+Vertical Scrollbar button (BOTTOM-RIGHT aKa END)
+*/
+::-webkit-scrollbar-button:vertical:single-button:end {
+  position: absolute;
+  overflow: hidden;
+  content: '';
+  border-bottom: 20px solid transparent;
+  border-top: 62px solid #7082f3;
+  border-right: 20px solid transparent;
+  border-left: 20px solid transparent;
+}
+
+/*
+Scrollbar corner which is totally at bottom-right
+*/
+::-webkit-scrollbar-corner {
+  background: rgba( 112, 178, 243, 0.75);
+}
+
+
+
+/* nav */
+.navBox .nav-item .dropdown-menu{
+transform: translate(0px, 44px);
+border-radius: 0;
+border: none;
+opacity: .8;
+}
+.navBox .nav-item .dropdown-menu li a.dropdown-item{font-size: 12px;}
+/* 날씨 */
+
+.weather{
+  position: relative;
+  top: -136px;
+  right: -389px;
+  width: 180px;
+  height: 180px;
+  background: rgb(185 215 252 / 62%);
+  border-radius: 20px;
+  font-size: 14px;
+}
+.cicon > img{
+  width: 150px;
+  position: absolute;
+  top: -20px;
+  left: 13px;
+  /* background: rgba(185, 231, 252, 0.5); */
+}
+
+.c-box{
+  position: absolute;
+  color: #000;
+  top: 106px;
+  left: 41px;
+  text-align: left;
+}
+
+/* 모달창 */
+
+.black-bg {
+  width : 100%;
+  height : 100%;
+  position : fixed;
+  background : rgba(0,0,0,0.5);
+  z-index : 5;
+  padding: 30px;
+  visibility: hidden;
+  opacity: 0;
+  transition: 1s;
+}
+.white-bg{
+  width: 700px;
+  height: 760px;
+  background: blanchedalmond;
+  border: 10px solid #2d82b5;
+  border-radius: 20px;
+  padding: 50px;
+  top: 50%;
+  left: 50%;
+  position: absolute;
+  transform: translate(-50%, -50%);
+  box-sizing: border-box;
+  background: url(../img/modal-bg4.jpg);
+} 
+
+.white-bg > .form{position: relative; top: -119px;}
+
+.white-bg > .form button {
+  background: #2d82b5;
+  border: none;
+  position: absolute;
+  right: 290px;
+  bottom: -65px;
+  transform: translateX(45px);
+  padding: 10px 30px;
+}
+
+.white-bg>h4{
+  font-weight: bold;
+  text-transform: uppercase;
+  margin-bottom: 20px;
+}
+.show-modal {
+  visibility: visible;
+  opacity: 1;
+}
+
+#login {
+  position: absolute;
+  top: 10px;
+  left: 53%;
+  background: rgba(255,255,255,.1);
+  width: 100px;
+  z-index: 9999999;
+  border: none;
+}
+
+
+
+
+.int-box{
+  flex: 0 0 auto;
+  width: 20%;
+}
+
+
+.news-ticker-h {
+  display: flex;
+  margin: 0;
+  padding: 0;
+  padding-left: 90%;
+  z-index: 999;
+  animation-iteration-count: infinite;
+  animation-timing-function: linear;
+  animation-name: tic-h;
+  animation-duration: 30s;
+}
+
+.news-ticker-h li {
+  display: flex;
+  width: 100%;
+  align-items: center;
+  white-space: nowrap;
+  padding-left: 20px;
+}
+
+.news-ticker-h .dot {
+  height: 30px;
+  width: 30px;
+  background-color: yellow;
+  margin: 0 10px;
+  border-radius: 50%;
+  display: inline-block;
+}
+
+li {
+  list-style: none;
+}
+
+.news-ticker-h li a {
+  color: #212529;
+  font-weight: normal;
+  text-decoration: none;
+  font-size: 32px;
+}
+
+
+/* #worldMap #map{height: 400px;} */
+
+.img-fluid:hover {opacity: 1;}
+.img-fluid {opacity: .75; }
+
+
+
+@media screen and (max-width:1020px){
+  #login {top: 30px;}
+  
+}
+
+@media screen and (max-width:750px){
+  #login {top: 58px; left: 242px;}
+  .logo-img {height: 40px;}
+  .carousel {top: 100px; margin-bottom: 100px;}
+  /* .white-bg {width: 600px; height: 600px;}
+  .weather {right: -329px; width: 150px; top: -156px;}
+  .cicon > img{left: 0;}
+  .c-box{left: 26px;}
+  #worldMap #map{height: 300px;}
+  #worldMap{height: 300px;} */
+}
+
+@media screen and (max-width:540px){
+  #login {top: 50px;}
+  .logo-img {display: none;}
+  /* .carousel {top: 100px; margin-bottom: 100px;}
+  #worldMap #map{height: 300px;}
+  #worldMap{height: 300px;} */
+}
+

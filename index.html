@@ -1,0 +1,303 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>낫아워스</title>
+
+
+    <link rel="icon" href="./img/faviconV2.png">
+    <link rel="stylesheet" href="./css/style.css">
+    <script src="https://code.jquery.com/jquery-3.7.0.min.js"></script>
+    <script src="./js/script.js" defer></script>
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet" 
+    integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
+    <link rel="canonical" href="https://getbootstrap.kr/docs/5.2/examples/navbars/">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4" crossorigin="anonymous"></script>
+    <script defer src="https://use.fontawesome.com/releases/v5.0.13/js/all.js" integrity="sha384-xymdQtn1n3lH2wcu0qhcdaOpQwyoarkgLVxC/wZ5q7h9gHtxICrpcaSUfygqZGOe" crossorigin="anonymous"></script>
+    <script type="text/javascript" src='//dapi.kakao.com/v2/maps/sdk.js?appkey=d1635898d7deb9a1f555db000f1314f2'></script>
+  </head>
+  <body class="scrollbar"  style="overflow-x: hidden;" >
+    <div class="black-bg show-modal">
+      <div class="white-bg">
+        <h4 style="font-size: 30px;">&#128150; pop-up store &#128150;</h4>
+        <p style="font-size: 18px;">경기 수원시 팔달구 갓매산로 38 다성빌딩 3층
+        <br>
+        <span style="font-size: 18px; background: rgb(185 215 252 / 62%);">더 휴먼 아카데미 </span> 
+        </p>
+        <ul>
+          <div class="weather">
+            <div class="cicon"></div>
+              <div class="c-box">
+                <div class="ctemp">현재 기온 : </div>
+                <div class="chighttemp">최저 기온 : </div>
+                <div class="clowtemp">최고 기온 : </div>
+              </div>
+          </div>
+        </ul>
+        <form action="success.html" class="form">
+            <div id="worldMap" style="width: 100%; height: 402px; border: 1px solid #2d82b5;">
+              <script>
+                var mapContainer = document.getElementById('map'), // 지도를 표시할 div  
+                    mapOption = { 
+                        center: new kakao.maps.LatLng(37.268054, 127.005436), // 지도의 중심좌표
+                        level: 3 // 지도의 확대 레벨
+                        // 127.005436
+                    };
+                
+                var map = new kakao.maps.Map(mapContainer, mapOption); // 지도를 생성합니다
+                 
+                // 마커를 표시할 위치와 title 객체 배열입니다 
+                var positions = [
+                    {
+                        title: '카카오', 
+                        latlng: new kakao.maps.LatLng(37.268054, 127.005436)
+                    },
+                    {
+                        title: '생태연못', 
+                        latlng: new kakao.maps.LatLng(37.268054, 127.005436)
+                    },
+                    {
+                        title: '텃밭', 
+                        latlng: new kakao.maps.LatLng(37.268054, 127.005436)
+                    },
+                    {
+                        title: '근린공원',
+                        latlng: new kakao.maps.LatLng(37.268054, 127.005436)
+                    }
+                ];
+                
+                // 마커 이미지의 이미지 주소입니다
+                var imageSrc = "https://t1.daumcdn.net/localimg/localimages/07/mapapidoc/markerStar.png"; 
+                    
+                for (var i = 0; i < positions.length; i ++) {
+                    
+                    // 마커 이미지의 이미지 크기 입니다
+                    var imageSize = new kakao.maps.Size(24, 35); 
+                    
+                    // 마커 이미지를 생성합니다    
+                    var markerImage = new kakao.maps.MarkerImage(imageSrc, imageSize); 
+                    
+                    // 마커를 생성합니다
+                    var marker = new kakao.maps.Marker({
+                        map: map, // 마커를 표시할 지도
+                        position: positions[i].latlng, // 마커를 표시할 위치
+                        title : positions[i].title, // 마커의 타이틀, 마커에 마우스를 올리면 타이틀이 표시됩니다
+                        image : markerImage // 마커 이미지 
+                    });
+                }
+                </script>
+
+    
+            </div>
+           <button type="button" class="btn btn-danger close" id="close">닫기</button>
+        </form>
+      </div>
+    </div> 
+    <div>
+      <nav class="navBox d-flex flex-wrap justify-content-between align-items-center py-3 fixed-top p-5 w-100" style="background:rgba(255,255,255,1)">
+        <ul class="nav col-md-4 justify-content-start">
+          <button id="login"><i class="fas fa-map-marker-alt fa-3x" style="color: #2d82b5;;"></i></button>
+          <li class="nav-item dropdown text-body">
+            <a class="nav-link text-body link-secondary border-bottom" href="#" data-bs-toggle="dropdown" aria-expanded="false">ARCHIVE</a>
+            <ul class="dropdown-menu">
+              <li><a class="dropdown-item link-secondary" href="#">2020</a></li>
+              <li><a class="dropdown-item link-secondary" href="#">2019</a></li>
+              <li><a class="dropdown-item link-secondary" href="#">2018</a></li>
+              <li><a class="dropdown-item link-secondary" href="#">COLLABORATION</a></li>
+            </ul>
+          </li>
+          <li class="nav-item dropdown text-body">
+            <a class="nav-link text-body link-secondary" href="#" data-bs-toggle="dropdown" aria-expanded="false">SHOP</a>
+            <ul class="dropdown-menu">
+              <li><a class="dropdown-item link-secondary" href="#">ALL PRODUCT</a></li>
+              <li><a class="dropdown-item link-secondary" href="#">PRE-ORDER</a></li>
+              <li><a class="dropdown-item link-secondary" href="#">POP-UP STORE</a></li>
+            </ul>
+          </li>
+          <li class="nav-item"><a href="#" class="nav-link px-2 text-body link-secondary">ABOUT</a></li>
+          <li class="nav-item"><a href="#" class="nav-link px-2 text-body link-secondary">MAGAZINE</a></li>
+        </ul>
+        <a href="/" class="col-md-4 d-flex align-items-center justify-content-center mb-3 mb-md-0 me-md-auto link-dark text-decoration-none">
+          <img src="./img/logo.png" class="logo-img" style="height: 30px;" alt="">
+        </a>
+        <ul class="nav col-md-4 justify-content-end">
+          <li class="nav-item"><a href="#" class="nav-link px-2 text-body link-secondary">LOG IN</a></li>
+          <li class="nav-item dropdown">
+            <a class="nav-link text-body link-secondary" href="#" data-bs-toggle="dropdown" aria-expanded="false">SIGN UP</a>
+            <ul class="dropdown-menu">
+              <li><a class="dropdown-item" href="#">LOG IN</a></li>
+              <li><a class="dropdown-item" href="#">Another action</a></li>
+              <li><a class="dropdown-item" href="#">Something else here</a></li>
+            </ul>
+          </li>
+          <li class="nav-item"><a href="#" class="nav-link px-2 text-dark link-secondary"><i class="fas fa-shopping-cart fa-lg"></i></a></li>
+          <li class="nav-item"><a href="#" class="nav-link px-2 text-dark link-secondary"><i class="fas fa-search fa-lg"></i></a></li>
+        </ul>
+      </nav>
+  </div>
+    <div id="carouselExampleIndicators" class="carousel slide">
+      <div class="carousel-indicators">
+        <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+        <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1" aria-label="Slide 2"></button>
+      </div>
+      <div class="carousel-inner">
+        <div class="carousel-item active">
+          <img src="./img/banner1.jpg" class="d-block w-100" alt="...">
+        </div>
+        <div class="carousel-item">
+          <img src="./img/banner2.jpg" class="d-block w-100" alt="...">
+        </div>
+      </div>
+      <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Previous</span>
+      </button>
+      <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="next">
+        
+
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Next</span>
+      </button>
+    </div>
+    <div class="container">
+      <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3">
+        <div class="col mb-5 img-bag">
+          <div>
+            <img src="./img/bag.jpg" class="w-100" style="cursor: pointer;" alt="">
+            <div class="card-body">
+              <p class="card-text mb-0 fs-5" >New color🎒</p>
+              <span class="font-size-14 text-danger" style="font-size: 14px;">Pine green♻️</span>
+            </div>
+          </div>
+        </div>
+        <div class="col mb-5">
+          <div>
+            <img src="./img/top.jpg" class="w-100" style="cursor: pointer;" alt="">
+            <div class="card-body">
+              <p class="card-text mb-0 fs-5" >Team Mushroom T-shirt</p>
+              <span class="font-size-14 text-danger" style="font-size: 14px;">Organic cotton</span>
+            </div>
+          </div>
+        </div>
+        <div class="col mb-5">
+          <div>
+            <img src="./img/top1.jpg" class="w-100 style="cursor: pointer;" alt="">
+            <div class="card-body">
+              <p class="card-text mb-0 fs-5" >Team Strawberry T-shirt</p>
+              <span class="font-size-14 text-danger" style="font-size: 14px;">Organic cotton</span>
+            </div>
+          </div>
+        </div>
+        <div class="col mb-5">
+          <div>
+            <img src="./img/top2.jpg" class="w-100" style="cursor: pointer;" alt="">
+            <div class="card-body">
+              <p class="card-text mb-0 fs-5" >Organic cotton T-shirt</p>
+              <span class="font-size-14 text-danger" style="font-size: 14px;">Fresh peach🍑</span>
+            </div>
+          </div>
+        </div>
+        <div class="col mb-5">
+          <div>
+            <img src="./img/bag2.jpg" class="w-100" style="cursor: pointer; max-height: 525px;" alt="">
+            <div class="card-body">
+              <p class="card-text mb-0 fs-5" >Recycled nylon backpack🎒</p>
+              <span class="font-size-14 text-danger" style="font-size: 14px;">Beige♻️</span>
+            </div>
+          </div>
+        </div>
+        <div class="col mb-10">
+          <div>
+            <img src="./img/wallet.jpg" class="w-100" style="cursor: pointer;" alt="" style="height: 525px">
+            <div class="card-body">
+              <p class="card-text mb-0 fs-5" >Real apple square wallet</p>
+              <span class="font-size-14 text-danger" style="font-size: 14px; max-height: 525px;">Made of Appleskin🍎</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <section class="page-section portfolio" id="instagram">
+      <div class="container">
+          <!-- Portfolio Section Heading-->
+          <h2 class="page-section-heading text-center text-uppercase text-secondary mb-5 text-white p-10" style=" -webkit-text-stroke-width: 1px; -webkit-text-stroke-color: black; font-size: 7vw; font-family: 'Union'; font-weight: bold;">INSTAGRAM</h2>
+          <!-- Icon Divider-->
+          <div class="divider-custom">
+              <div class="divider-custom-line"></div>
+              <div class="divider-custom-line"></div>
+          </div>
+          <!-- Portfolio Grid Items-->
+          <div class="row justify-content-center">
+              <!-- Portfolio Item 1-->
+              <div class="col-md-6 col-lg-4 mb-5 int-box" style="flex: 0 0 auto; width: 20%;">
+                  <div class="portfolio-item mx-auto" data-bs-toggle="modal" data-bs-target="#portfolioModal1">
+                      <img class="img-fluid" src="img/insta1.jpg" alt="..."/>
+                  </div>
+              </div>
+              <!-- Portfolio Item 2-->
+              <div class="col-md-6 col-lg-4 mb-5 int-box" style="flex: 0 0 auto; width: 20%;">
+                  <div class="portfolio-item mx-auto opacity-75" data-bs-toggle="modal" data-bs-target="#portfolioModal2">
+                      <img class="img-fluid" src="img/insta2.jpg" alt="..."/>
+                  </div>
+              </div>
+              <!-- Portfolio Item 3-->
+              <div class="col-md-6 col-lg-4 mb-5 int-box" style="flex: 0 0 auto; width: 20%;">
+                  <div class="portfolio-item mx-auto opacity-75" data-bs-toggle="modal" data-bs-target="#portfolioModal3">
+                      <img class="img-fluid" src="img/insta3.jpg" alt="..."/>
+                  </div>
+              </div>
+              <!-- Portfolio Item 4-->
+              <div class="col-md-6 col-lg-4 mb-5 mb-lg-0 int-box" style="flex: 0 0 auto; width: 20%;">
+                  <div class="portfolio-item mx-auto opacity-75" data-bs-toggle="modal" data-bs-target="#portfolioModal4">
+                      <img class="img-fluid" src="img/insta4.jpg" alt="..."/>
+                  </div>
+              </div>
+              <!-- Portfolio Item 5-->
+              <div class="col-md-6 col-lg-4 mb-5 mb-md-0 int-box" style="flex: 0 0 auto; width: 20%;">
+                  <div class="portfolio-item mx-auto opacity-75" data-bs-toggle="modal" data-bs-target="#portfolioModal5">
+                      <img class="img-fluid" src="img/insta5.jpg" alt="..."/>
+                  </div>
+              </div>
+          </div>
+      </div>
+  </section>
+    <div class="container pt-4 mb-5">
+      <img src="./img/footer.png" class="float-end" style="height: 41px" alt="">
+    </div>
+    <div class="container mt-5">
+      <footer class="d-flex flex-wrap justify-content-between align-items-top py-3">
+        <main class="flex-shrink-0">
+          <div class="container col-dz-9 col-xdz-12 col-dz">
+            <ul class="nav justify-content-start pb-3">
+              <li class="nav-item"><a href="#" class="nav-link px-2 ps-0 link-secondary text-body">CONTACT</a></li>
+              <li class="nav-item"><a href="#" class="nav-link px-2 text-body link-secondary">이용안내</a></li>
+              <li class="nav-item"><a href="#" class="nav-link px-2 text-body link-secondary">이용약관</a></li>
+              <li class="nav-item"><a href="#" class="nav-link px-2 text-body link-secondary link-secondary fw-bold">개인정보처리방침</a></li>
+            </ul>
+            <p class="fw-bold mb-2">NOT OURS </p>
+            <p class="mb-1">상호명 : 낫아워스 NOT OURS | 대표 : 박진영, 신하나 </p>
+            <p class="mb-1">사업자등록번호 : 697-24-00528 
+              <a href="#" class="text-light text-bg-secondary text-decoration-none">사업자 정보 확인</a>
+              | 통신판매업신고번호 : 제 2019-서울 마포-0328 | 호스팅제공자 : (주)아임웹 
+            </p>
+            <p class="mb-1">서울시 마포구 월드컵로8길 25, 102</p>
+            <p class="mb-1">대표 전화 : +82 70-8860-0528 (광고, 페어 참가, 후원 문의는 받지 않습니다.)</p>
+            <p class="mb-1">대표 이메일 : team@thenotours.com | 운영시간(한국) 11:00 ~ 18:00, 주말/공휴일은 제외.</p>
+            <br>
+            <p class="mb-1">© 2023 NOT OURS All Rights Reserved</p>
+          </div>
+        </main>
+        <ul class="nav col-md-4 justify-content-end mt-0 py-3">
+          <li class="nav-item"><a href="#" class="nav-link link-secondary px-2"><i class="fab fa-facebook-f fa-2x text-body"></i></a></li>
+          <li class="nav-item"><a href="#" class="nav-link link-secondary px-2 ms-3 me-3"><i class="fab fa-instagram fa-2x text-body"></i></a></li>
+          <li class="nav-item"><a href="#" class="nav-link link-secondary px-2"><i class="fab fa-twitter fa-2x text-body"></i></a></li>
+        </ul>
+        <div>
+        </div>
+      </footer>
+    </div>
+  </div>
+</body>
+</html>
