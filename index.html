@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>낫아워스</title>
-
+    <script type="text/javascript" src='//dapi.kakao.com/v2/maps/sdk.js?appkey=622516141a25e41a9107d05c098e4304'></script>
 
     <link rel="icon" href="./img/faviconV2.png">
     <link rel="stylesheet" href="./css/style.css">
@@ -16,7 +16,8 @@
     <link rel="canonical" href="https://getbootstrap.kr/docs/5.2/examples/navbars/">
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4" crossorigin="anonymous"></script>
     <script defer src="https://use.fontawesome.com/releases/v5.0.13/js/all.js" integrity="sha384-xymdQtn1n3lH2wcu0qhcdaOpQwyoarkgLVxC/wZ5q7h9gHtxICrpcaSUfygqZGOe" crossorigin="anonymous"></script>
-    <script type="text/javascript" src='//dapi.kakao.com/v2/maps/sdk.js?appkey=d1635898d7deb9a1f555db000f1314f2'></script>
+
+    <script type="text/javascript" src='//dapi.kakao.com/v2/maps/sdk.js?appkey=622516141a25e41a9107d05c098e4304'></script>
   </head>
   <body class="scrollbar"  style="overflow-x: hidden;" >
     <div class="black-bg show-modal">
@@ -37,64 +38,70 @@
           </div>
         </ul>
         <form action="success.html" class="form">
-            <div id="worldMap" style="width: 100%; height: 402px; border: 1px solid #2d82b5;">
-              <script>
-                var mapContainer = document.getElementById('map'), // 지도를 표시할 div  
-                    mapOption = { 
-                        center: new kakao.maps.LatLng(37.268054, 127.005436), // 지도의 중심좌표
-                        level: 3 // 지도의 확대 레벨
-                        // 127.005436
-                    };
-                
-                var map = new kakao.maps.Map(mapContainer, mapOption); // 지도를 생성합니다
-                 
-                // 마커를 표시할 위치와 title 객체 배열입니다 
-                var positions = [
-                    {
-                        title: '카카오', 
-                        latlng: new kakao.maps.LatLng(37.268054, 127.005436)
-                    },
-                    {
-                        title: '생태연못', 
-                        latlng: new kakao.maps.LatLng(37.268054, 127.005436)
-                    },
-                    {
-                        title: '텃밭', 
-                        latlng: new kakao.maps.LatLng(37.268054, 127.005436)
-                    },
-                    {
-                        title: '근린공원',
-                        latlng: new kakao.maps.LatLng(37.268054, 127.005436)
-                    }
-                ];
-                
-                // 마커 이미지의 이미지 주소입니다
-                var imageSrc = "https://t1.daumcdn.net/localimg/localimages/07/mapapidoc/markerStar.png"; 
-                    
-                for (var i = 0; i < positions.length; i ++) {
-                    
-                    // 마커 이미지의 이미지 크기 입니다
-                    var imageSize = new kakao.maps.Size(24, 35); 
-                    
-                    // 마커 이미지를 생성합니다    
-                    var markerImage = new kakao.maps.MarkerImage(imageSrc, imageSize); 
-                    
-                    // 마커를 생성합니다
-                    var marker = new kakao.maps.Marker({
-                        map: map, // 마커를 표시할 지도
-                        position: positions[i].latlng, // 마커를 표시할 위치
-                        title : positions[i].title, // 마커의 타이틀, 마커에 마우스를 올리면 타이틀이 표시됩니다
-                        image : markerImage // 마커 이미지 
-                    });
-                }
-                </script>
+          <div id="worldMap" style="width: 100%; height: 402px; border: 1px solid #2d82b5;">
+            <div id="map" style="width:100%;height:350px;"></div>
 
-    
+            <div id="worldMap">
+              <div id="map" style="width:100%;height:400px;"></div>
+              <script type="text/javascript" src="//dapi.kakao.com/v2/maps/sdk.js?appkey=ed7b1245b777544b23b214e9a9335373"></script>
+              <script>
+              var mapContainer = document.getElementById('map'), // 지도를 표시할 div  
+                  mapOption = { 
+                      center: new kakao.maps.LatLng(37.268054, 127.005436), // 지도의 중심좌표
+                      level: 3 // 지도의 확대 레벨
+                      // 127.005436
+                  };
+              
+              var map = new kakao.maps.Map(mapContainer, mapOption); // 지도를 생성합니다
+               
+              // 마커를 표시할 위치와 title 객체 배열입니다 
+              var positions = [
+                  {
+                      title: '카카오', 
+                      latlng: new kakao.maps.LatLng(37.268054, 127.005436)
+                  },
+                  {
+                      title: '생태연못', 
+                      latlng: new kakao.maps.LatLng(37.268054, 127.005436)
+                  },
+                  {
+                      title: '텃밭', 
+                      latlng: new kakao.maps.LatLng(37.268054, 127.005436)
+                  },
+                  {
+                      title: '근린공원',
+                      latlng: new kakao.maps.LatLng(37.268054, 127.005436)
+                  }
+              ];
+              
+              // 마커 이미지의 이미지 주소입니다
+              var imageSrc = "https://t1.daumcdn.net/localimg/localimages/07/mapapidoc/markerStar.png"; 
+                  
+              for (var i = 0; i < positions.length; i ++) {
+                  
+                  // 마커 이미지의 이미지 크기 입니다
+                  var imageSize = new kakao.maps.Size(24, 35); 
+                  
+                  // 마커 이미지를 생성합니다    
+                  var markerImage = new kakao.maps.MarkerImage(imageSrc, imageSize); 
+                  
+                  // 마커를 생성합니다
+                  var marker = new kakao.maps.Marker({
+                      map: map, // 마커를 표시할 지도
+                      position: positions[i].latlng, // 마커를 표시할 위치
+                      title : positions[i].title, // 마커의 타이틀, 마커에 마우스를 올리면 타이틀이 표시됩니다
+                      image : markerImage // 마커 이미지 
+                  });
+              }
+              </script>
+      
             </div>
-           <button type="button" class="btn btn-danger close" id="close">닫기</button>
-        </form>
-      </div>
-    </div> 
+  
+          </div>
+         <button type="button" class="btn btn-danger close" id="close">닫기</button>
+      </form>
+    </div>
+  </div> 
     <div>
       <nav class="navBox d-flex flex-wrap justify-content-between align-items-center py-3 fixed-top p-5 w-100" style="background:rgba(255,255,255,1)">
         <ul class="nav col-md-4 justify-content-start">
@@ -229,33 +236,33 @@
               <div class="divider-custom-line"></div>
           </div>
           <!-- Portfolio Grid Items-->
-          <div class="row justify-content-center">
+          <div class="row justify-content-center img-box">
               <!-- Portfolio Item 1-->
-              <div class="col-md-6 col-lg-4 mb-5 int-box" style="flex: 0 0 auto; width: 20%;">
+              <div class="col-md-6 col-lg-4 mb-5 int-box int-img" >
                   <div class="portfolio-item mx-auto" data-bs-toggle="modal" data-bs-target="#portfolioModal1">
                       <img class="img-fluid" src="img/insta1.jpg" alt="..."/>
                   </div>
               </div>
               <!-- Portfolio Item 2-->
-              <div class="col-md-6 col-lg-4 mb-5 int-box" style="flex: 0 0 auto; width: 20%;">
+              <div class="col-md-6 col-lg-4 mb-5 int-box int-img" >
                   <div class="portfolio-item mx-auto opacity-75" data-bs-toggle="modal" data-bs-target="#portfolioModal2">
                       <img class="img-fluid" src="img/insta2.jpg" alt="..."/>
                   </div>
               </div>
               <!-- Portfolio Item 3-->
-              <div class="col-md-6 col-lg-4 mb-5 int-box" style="flex: 0 0 auto; width: 20%;">
+              <div class="col-md-6 col-lg-4 mb-5 int-box int-img" >
                   <div class="portfolio-item mx-auto opacity-75" data-bs-toggle="modal" data-bs-target="#portfolioModal3">
                       <img class="img-fluid" src="img/insta3.jpg" alt="..."/>
                   </div>
               </div>
               <!-- Portfolio Item 4-->
-              <div class="col-md-6 col-lg-4 mb-5 mb-lg-0 int-box" style="flex: 0 0 auto; width: 20%;">
+              <div class="col-md-6 col-lg-4 mb-5 mb-lg-0 int-box int-img" >
                   <div class="portfolio-item mx-auto opacity-75" data-bs-toggle="modal" data-bs-target="#portfolioModal4">
                       <img class="img-fluid" src="img/insta4.jpg" alt="..."/>
                   </div>
               </div>
               <!-- Portfolio Item 5-->
-              <div class="col-md-6 col-lg-4 mb-5 mb-md-0 int-box" style="flex: 0 0 auto; width: 20%;">
+              <div class="col-md-6 col-lg-4 mb-5 mb-md-0 int-box int-img" >
                   <div class="portfolio-item mx-auto opacity-75" data-bs-toggle="modal" data-bs-target="#portfolioModal5">
                       <img class="img-fluid" src="img/insta5.jpg" alt="..."/>
                   </div>

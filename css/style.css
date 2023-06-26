@@ -245,6 +245,7 @@ li {
   font-size: 32px;
 }
 
+.img-box >.int-img{flex: 0 0 auto; width: 20%;}
 
 /* #worldMap #map{height: 400px;} */
 
@@ -262,6 +263,7 @@ li {
   #login {top: 58px; left: 242px;}
   .logo-img {height: 40px;}
   .carousel {top: 100px; margin-bottom: 100px;}
+  .img-box >.int-img{width: 33%;}
   /* .white-bg {width: 600px; height: 600px;}
   .weather {right: -329px; width: 150px; top: -156px;}
   .cicon > img{left: 0;}
@@ -273,6 +275,8 @@ li {
 @media screen and (max-width:540px){
   #login {top: 50px;}
   .logo-img {display: none;}
+  .img-box >.int-img{width: 50%;}
+  #instagram > .container > h2{margin-top: 20px;}
   /* .carousel {top: 100px; margin-bottom: 100px;}
   #worldMap #map{height: 300px;}
   #worldMap{height: 300px;} */
