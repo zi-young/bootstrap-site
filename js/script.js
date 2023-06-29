@@ -10,7 +10,7 @@ $(window).on('scroll', function(){
 
 
 $(function(){
-    $.getJSON('http://api.openweathermap.org/data/2.5/forecast?id=1835848&appid=90dda4a9ad533db48bad866d3d27fbea&units=metric', function(data){
+    $.getJSON('https://api.openweathermap.org/data/2.5/forecast?id=1835848&appid=90dda4a9ad533db48bad866d3d27fbea&units=metric', function(data){
         // console.log(data.list[0].main.temp)
 
         const $temp=data.list[0].main.temp;

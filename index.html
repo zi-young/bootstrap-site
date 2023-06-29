@@ -4,6 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>낫아워스</title>
+    <script type="text/javascript" src='//dapi.kakao.com/v2/maps/sdk.js?appkey=622516141a25e41a9107d05c098e4304'></script>
+
     <link rel="icon" href="./img/faviconV2.png">
     <link rel="stylesheet" href="./css/style.css">
     <script src="https://code.jquery.com/jquery-3.7.0.min.js"></script>
@@ -15,7 +17,7 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4" crossorigin="anonymous"></script>
     <script defer src="https://use.fontawesome.com/releases/v5.0.13/js/all.js" integrity="sha384-xymdQtn1n3lH2wcu0qhcdaOpQwyoarkgLVxC/wZ5q7h9gHtxICrpcaSUfygqZGOe" crossorigin="anonymous"></script>
 
-    <script type="text/javascript" src='//dapi.kakao.com/v2/maps/sdk.js?appkey=ed7b1245b777544b23b214e9a9335373'></script>
+    <script type="text/javascript" src='//dapi.kakao.com/v2/maps/sdk.js?appkey=622516141a25e41a9107d05c098e4304'></script>
   </head>
   <body class="scrollbar"  style="overflow-x: hidden;" >
     <div class="black-bg show-modal">
@@ -36,11 +38,10 @@
           </div>
         </ul>
         <form action="success.html" class="form">
-          <div id="worldMap" style="width: 100%; height: 402px; border: 1px solid #2d82b5;">
-            <div id="map" style="width:100%;height:350px;"></div>
+          <!-- <div id="worldMap"> -->
 
             <div id="worldMap">
-              <div id="map" style="width:100%;height:400px;"></div>
+              <div id="map"></div>
               <script type="text/javascript" src="//dapi.kakao.com/v2/maps/sdk.js?appkey=ed7b1245b777544b23b214e9a9335373"></script>
               <script>
               var mapContainer = document.getElementById('map'), // 지도를 표시할 div  
@@ -94,9 +95,9 @@
               </script>
       
             </div>
-  
+            <button type="button" class="btn btn-danger close" id="close">닫기</button>
+
           </div>
-         <button type="button" class="btn btn-danger close" id="close">닫기</button>
       </form>
     </div>
   </div> 
